@@ -1,0 +1,182 @@
+:root {
+    --font-body: "Urbanist", sans-serif;
+    --color-light: #F8E7D4;
+    --color-dark: #342717;
+    --font-sm: 1.2rem;
+    --font-lg: clamp(2.5rem, 5vw + 1rem, 6rem);
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    --radius-md: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.hero {
+    min-height: 100dvh;
+    background-image: url(../images/banner0.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+}
+
+.hero h1 {
+    font-size: var(--font-lg);
+    color: var(--color-light);
+    width: 50%;
+    text-wrap: balance;
+}
+
+.btn {
+    text-decoration: none;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    
+}
+
+.container {
+    width: 90%;
+    margin: var(--spacing-xl) auto;
+    text-align: center;
+}
+
+.titles {
+    font-size: var(--font-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark);
+}
+
+/*************   grid-01   *************/
+.grid-01 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+}
+
+.box-1 {
+    position: relative;
+
+    img {
+        border-radius: var(--radius-md);
+    }
+}
+
+.box-1 a {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: var(--spacing-md);
+    z-index: 1;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+/************* fim grid-01 *************/
+
+/*************   logos   *************/
+
+.logos {
+    overflow: hidden;
+    display: flex;
+}
+
+.logos:hover .logos-slide {
+    animation-play-state: paused;
+}
+
+.logos-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    animation: slide 20s linear infinite;
+}
+
+.logos-slide img {
+    width: auto;
+    height: 80px;
+    margin-inline: var(--spacing-sm);
+    opacity: .6;
+    transition: .5s;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+/* Criando Animação */
+@keyframes slide {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+/************* fim logos *************/
+
+
+/*************   grid-02   *************/
+
+.grid-02 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.box-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: var(--spacing-sm);
+    border: 1px solid var(--color-light);
+    padding-bottom: var(--spacing-md);
+}
+
+/************* fim grid-02 *************/
+
+/*************   grid-03   *************/
+.grid-03{
+    display: grid;
+    grid-template-columns: repeat(2,1fr); /* define o tamanho das linhas que são gerados automaticamente no grid    */
+    gap: var(--spacing-md);
+    grid-auto-rows:400px ;
+
+}
+
+.box-3{
+    border-radius: var(--radius-md);
+    overflow:hidden
+}
+
+.grid-03 img{
+    height: 100%;
+    object-fit: cover;
+}
+
+/************* fim grid-03 *************/
+
+/*************   responsivo   *************/
+
+/************* fim responsivo *************/
